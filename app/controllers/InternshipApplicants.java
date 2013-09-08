@@ -37,7 +37,7 @@ public class InternshipApplicants extends Controller
     Internship internship = Internship.findById(internshipId);
     Student student = Student.findById(applicantId);
     internship.rejectIntern(student);
-    Home.index();
+    InternshipApplicants.index();
   }
 
 }

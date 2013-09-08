@@ -38,7 +38,7 @@ public class AccommodationApplicants extends Controller
     Accommodation accommodation = Accommodation.findById(accommodationId);
     Student student = Student.findById(applicantId);
     accommodation.rejectApplicant(student);
-    Home.index();
+    AccommodationApplicants.index();
   }
 
 }
