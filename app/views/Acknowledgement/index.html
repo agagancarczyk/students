@@ -1,0 +1,30 @@
+#{extends 'main.html' /}
+#{set title:'Acknowledgement' /}
+#{include 'nav/navopen.html' /}
+  <li><a href="/home">Home</a></li>
+  <li><a href="/about">About</a></li>
+  <li class="active"><a href="/contact">Contact</a></li>    
+ #{include 'nav/dropdownopen.html' /}
+  <li><a href="/aims">Aim(s)</a></li> 
+  <li><a href="/logout">Logout</a></li>
+#{include 'nav/dropdownclose.html' /} 
+#{include 'nav/navclose.html' /}
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <div class="panel panel-info">
+        <div class="panel-heading"><strong>Thank you for your message!</strong></div>
+        <div class="panel-body">
+          <p>We very much appreciate your having taken the time out of your very busy schedule to contact us.
+             We will deal with the issues you have raised and advise you of the outcome as soon as possible.</p>   
+          <p>With best wishes,</p>
+          <p>studEnts</p>
+        </div>
+      </div> 
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>

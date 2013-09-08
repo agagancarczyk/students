@@ -1,0 +1,64 @@
+#{extends 'main.html' /}
+#{set title:'Internship Search' /}
+#{include 'nav/navopen.html' /}
+  <li><a href="/home">Home</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/contact">Contact</a></li>    
+#{include 'nav/dropdownopen.html' /}
+  <li><a href="/aims">Aim(s)</a></li> 
+  <li><a href="/logout">Logout</a></li>
+  <li class="divider"></li>
+#{if user instanceof models.Student}
+  <li class="nav-header"><strong>Search Options</strong></li>
+  <li><a href="/courseSearch">Course</a></li>
+  <li><a href="/accommodationSearch">Accommodation</a></li>
+  <li class="active"><a href="/internshipSearch">Internship</a></li>
+#{/if}
+#{if user instanceof models.Employer}
+  <li class="nav-header"><strong>Options</strong></li>
+  <li class="active"><a href="/internshipSearch">Internship Search</a></li>
+  <li><a href="/addRemoveInternship">Add/Remove Internship</a></li>
+  <li><a href="/internshipApplicants">Internship Applicants</a></li>
+#{/if}
+#{include 'nav/dropdownclose.html' /} 
+#{include 'nav/navclose.html' /}
+
+
+
+<!-- Internship Search Results Begin -->
+<div class="container">
+  <div class="row">
+  <div class="col-lg-1"></div>
+    <div class="col-lg-10">
+    <h2><span class="text-muted">Internship Search Results</span></h2>
+      <div class="well">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <td><strong>Employer</strong></td>
+              <td><strong>Location</strong></td>
+              <td><strong>Job Title</strong></td>
+              <td><strong>Career Sector</strong></td>
+            </tr>
+          </thead>
+          <tbody>
+              #{list items: searchResults, as:'result'}
+              <tr>
+                <td>${result.employer.employerName}</td>
+                <td>${result.employer.employerAddress}</td>
+                <td>${result.jobTitle}</td>
+                <td>${result.careerSector}</td>
+                #{if user instanceof models.Student}
+                  <td><a href="@{InternshipSearch.applyForInternship(result.id)}" title="Internship Apply"><button type="button" class="btn btn-success">Apply</button></a></td>
+                #{/if}
+              </tr>
+             #{/list}
+          </tbody>
+        </table>
+        <p class="pull-right"><strong><a href="/InternshipSearch/index" >Back to Searches</a></strong></p>
+      </div>
+    </div>
+    <div class="col-lg-1"></div>
+  </div>
+</div>
+<!-- Internship Search Results End -->

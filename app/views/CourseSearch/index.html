@@ -1,0 +1,165 @@
+#{extends 'main.html' /}
+#{set title:'Course' /}
+#{include 'nav/navopen.html' /}
+  <li><a href="/home">Home</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/contact">Contact</a></li>    
+#{include 'nav/dropdownopen.html' /}
+  <li><a href="/logout">Logout</a></li>
+  <li class="divider"></li>
+#{if user instanceof models.Student}
+  <li class="nav-header"><strong>Search Options</strong></li>
+  <li class="active"><a href="/courseSearch">Course</a></li>
+  <li><a href="/accommodationSearch">Accommodation</a></li>
+  <li><a href="/internshipSearch">Internship</a></li>
+#{/if} 
+#{if user instanceof models.College}
+  <li class="nav-header"><strong>Options</strong></li>
+  <li class="active"><a href="/courseSearch">Course Search</a></li>
+  <li><a href="/addRemoveCourse">Add/Remove Course</a></li>
+  <li><a href="/courseApplicants">Course Applicants</a></li>
+#{/if}
+#{include 'nav/dropdownclose.html' /} 
+#{include 'nav/navclose.html' /}
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="featurette">
+        <img class="featurette-image img-circle pull-left" src="/public/assets/images/college.jpg">
+        <h1 class="featurette-heading">Looking for a Course? <span class="text-muted">Excellent! <br>You are in the right place.</span></h1>
+        <p class="lead">Searching for the right college and the course that have all you want has never been easier. Try it! We promise you will not be disappointed.</a>
+        </p>
+        <hr class="featurette-divider">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <h2><span class="text-muted">Course Search</span></h2>
+      <p class="lead">Searching for: <span id="results"></span></p>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+<!-- Search by Course Title Begin -->
+<div class="container">
+  <div class="row">
+    <form class="form-inline" action="courseSearch/findByCourseTitle" method="POST">
+      <div class="form-group">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-2">
+          <h2><small>By Course Title: </small></h2>
+        </div>
+        <div class="col-lg-4">
+          <label class="searchByCourseTitle" for="searchByCourseTitle"></label>
+          <input type="text" class="form-control" name="courseTitle" placeholder="Enter Course Title">
+        </div>
+      </div><br>
+      <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Search</button>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- Search by Course Title End -->
+<!-- Search by College Begin -->
+<div class="container">
+  <div class="row">
+    <form class="form-inline" action="courseSearch/findByCollege" method="POST">
+      <div class="form-group">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-2">
+          <h2><small>By College Name: </small></h2>
+        </div>
+        <div class="col-lg-4">
+          <label class="searchByCollege" for="searchByCollege"></label>
+          <input type="text" class="form-control" name="college" placeholder="Enter College Name">
+        </div>
+      </div><br>
+      <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Search</button>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- Search by College End -->
+<!-- Search by School/Department Begin -->
+<div class="container">
+  <div class="row">
+    <form class="form-inline" action="courseSearch/findBySchool" method="POST">
+      <div class="form-group">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-2">
+          <h2><small>By School/ Dept: </small></h2>
+        </div>
+        <div class="col-lg-2">
+          <label class="searchBySchool" for="searchBySchool"></label>
+          <select type="text" class="form-control" name="schoolName">
+		    <option title="Select school" value="" selected="">Select School</option>
+			<option title="business" value="Business">Business</option>
+			<option title="engineering" value="Engineering">Engineering</option>
+		    <option title="education" value="Education">Education</option>
+		    <option title="health sciences" value="Health Sciences">Health Sciences</option>
+		    <option title="humanities" value="Humanities">Humanities</option>
+			<option title="science" value="Science">Science</option>
+		  </select>
+        </div>
+      </div><br>
+      <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Search</button>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- Search by School/Department End -->
+<!-- Search by Course Level Begin -->
+<div class="container">
+  <div class="row">
+    <form class="form-inline" action="courseSearch/findByLevel" method="POST">
+      <div class="form-group">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-2">
+          <h2><small>By Course Level: </small></h2>
+        </div>
+        <div class="col-lg-2">
+          <label class="searchByLevel" for="searchByLevel"></label>
+          <input type="text" pattern="[6-9]*" class="form-control" name="level" placeholder="Enter Level">
+        </div>
+      </div><br>
+      <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Search</button>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- Search by Course Level End -->
+<!-- Search by Entry Points Begin -->
+<div class="container">
+  <div class="row">
+    <form class="form-inline" action="courseSearch/findByPoints" method="POST">
+      <div class="form-group">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-2">
+          <h2><small>By Entry Points: </small></h2>
+        </div>
+        <div class="col-lg-2">
+          <label class="searchByPoints" for="searchByPoints"></label>
+          <input type="number" class="form-control" name="points" value ="" placeholder="Enter Points">
+        </div>
+      </div><br>
+      <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Search</button>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- Search by Entry Points End -->   
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script type='text/javascript' src="@{'/public/assets/js/my_scripts.js'}"></script>

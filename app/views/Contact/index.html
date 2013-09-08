@@ -1,0 +1,92 @@
+#{extends 'main.html' /}
+#{set title:'Contact' /}
+#{include 'nav/navopen.html' /}
+  <li><a href="/home">Home</a></li>
+  <li><a href="/about">About</a></li>
+  <li class="active"><a href="/contact">Contact</a></li>    
+ #{include 'nav/dropdownopen.html' /}
+ <li><a href="/aims">Aim(s)</a></li> 
+  <li><a href="/logout">Logout</a></li>
+#{include 'nav/dropdownclose.html' /} 
+#{include 'nav/navclose.html' /}
+
+
+<div class="container marketing">
+  <div class="row">
+    <div class="col-lg-4">
+      <h1>Our Location</h1>
+      <img src="/public/assets/images/contactUs.png">
+    </div>
+    <div class="col-lg-4">
+      <h1>Contact Info</h1>
+      <address>
+        <strong>studEnts, Inc.</strong><br>Clarke Road<br>Waterford<br>County Waterford<br>Ireland<br><abbr title="Phone">P:</abbr> +353 (51) 536373
+      </address>
+      <address><strong>Email:</strong><br>
+        <a href="mailto:#">studEntsAdmin@gmail.com</a>
+      </address>
+      <div class="alert alert-info">
+        <strong>Info! </strong>Don't hesitate to contact us about anything you want. We are open to questions, comments and suggestions.
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <h1>Email Us</h1>
+      <form action="/contact/sendmessage" method="POST">
+       #{ifErrors}
+         #{errors}  
+           <p id="alert">
+             ${error}<br>
+           </p>
+         #{/errors}
+	   #{/ifErrors}
+       <fieldset>
+         <div class="form-group">
+           <input type="text" class="form-control" name="firstName" placeholder="First Name">
+         </div>
+         <div class="form-group">
+           <input type="text" class="form-control" name="lastName" placeholder="Last Name">
+         </div>
+         <div class="form-group">
+           <div class="input-group">
+             <span class="input-group-addon">@</span>
+             <input type="email" class="form-control" name="emailSender" placeholder="Email">
+           </div>
+         </div>
+         <div class="form-group">
+           <textarea class="form-control" rows="3" name="messageTxd" placeholder="Message"></textarea>    
+         </div>
+         <p>
+           <label for="code"></label>
+           <img src="@{Contact.captcha(randomID)}" />
+           <br />
+           <input type="text" class="form-control" name="code" id="code" size="18" placeholder="Please type the code above" />
+           <input type="hidden" class="form-control" name="randomID" value="${randomID}" />
+         </p>
+         <button type="submit" class="btn btn-primary">Send</button>
+       </fieldset>
+     </form>
+   </div>
+ </div>
+ <hr class="featurette-divider">
+ <footer>
+   <div id="social">
+     <div class="col-md-3 col-md-offset-3 social">
+       <!-- AddThis Button Start -->
+       <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+         <a class="addthis_button_preferred_1"></a>
+         <a class="addthis_button_preferred_2"></a>
+         <a class="addthis_button_compact"></a>
+         <a class="addthis_counter addthis_bubble_style"></a>
+       </div>
+       <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+       <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51e5f5d9549fdf9b"></script>
+       <!-- AddThis Button End -->
+     </div>
+   </div><br>
+   <div id="copyright">
+     <p class="pull-right"><a href="#">Back to top</a></p>
+     <p>&copy; 2013 studEnts, Inc. &middot; <a href="/terms">Privacy & Terms of Service</a></p>
+   </div>
+ </footer>
+</div>
+

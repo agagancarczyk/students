@@ -1,0 +1,70 @@
+#{extends 'main.html' /}
+#{set title:'Signup' /}
+#{include 'nav/navopen.html' /}
+  <li class="active"><a href="/signup">Sign Up</a></li>
+  <li><a href="/login">Login</a></li>
+#{include 'nav/navclose.html' /}
+
+
+
+<div class="container marketing"> 
+  <h1>Sign Up</h1>
+    <div class="container marketing"> 
+    <hr class="featurette-divider">
+      <div class="container marketing">
+        <div class="row">
+          <div class="col-lg-3">
+            <img class="img-circle" src="/public/assets/images/students.jpg">
+            <h1>Student</h1>
+            <p>Are you currently a Student or considering becoming one? Are you looking for a course, accommodation or internship? 
+            We offer an excellent search engines to help you with these. Please register here.</p>
+            <p><a class="btn btn-default" id="btn1">Sign up! &raquo;</a></p>
+          </div>
+          <div class="col-lg-3">
+            <img class="img-circle" src="/public/assets/images/courses.jpg">
+            <h1>College</h1>
+            <p>Are you representing IT or University? Please register here to search/ add/ remove courses,
+            and even accept/reject Student applications for courses offered by your College.</p>
+            <p><a class="btn btn-default" id="btn2">Sign up! &raquo;</a></p>
+          </div>
+          <div class="col-lg-3">
+            <img class="img-circle" src="/public/assets/images/rent.jpg">
+            <h1>Agency</h1>
+            <p>Are you representing Agency? Please register here to search/ add/ remove accommodations,
+            and even accept/reject bookings for accommodation viewings made by Students.</p>
+            <p><a class="btn btn-default" id="btn3">Sign up! &raquo;</a></p>
+          </div>
+          <div class="col-lg-3">
+            <img class="img-circle" src="/public/assets/images/internship.jpg">
+            <h1>Employer</h1>
+            <p>Are you representing Employer? Please register here to search/ add/ remove your latest internship offers,
+            and even accept/reject applications made by Students.</p>
+            <p><a class="btn btn-default" id="btn4">Sign up! &raquo;</a></p>
+          </div>
+        </div>
+      </div>
+      <hr class="featurette-divider">
+    </div>
+  </div>
+  <!-- Student Sign up Begin -->
+  <div class="formStudent">
+    #{include 'Accounts/signup_forms/student_form.html' /}
+  </div>
+  <!-- Student Sign up End-->
+  <!-- College Sign up Begin-->
+  <div class="formCollege">
+    #{include 'Accounts/signup_forms/college_form.html' /}
+  </div>
+  <!-- College Sign up End-->
+  <!-- Agency Sign up Begin-->
+  <div class="formAgency">
+    #{include 'Accounts/signup_forms/agency_form.html' /}
+  </div>
+  <!-- Agency Sign up End -->
+  <!-- Employer Sign up Begin-->
+  <div class="formEmployer">
+    #{include 'Accounts/signup_forms/employer_form.html' /}
+  </div>
+  <!-- Employer Sign up End-->
+  <script type='text/javascript' src="@{'/public/bootstrap/js/jquery.min.js'}"></script>
+  <script type='text/javascript' src="@{'/public/assets/js/my_scripts.js'}"></script>

@@ -1,0 +1,65 @@
+#{extends 'main.html' /}
+#{set title:'Course' /}
+#{include 'nav/navopen.html' /}
+  <li><a href="/home">Home</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/contact">Contact</a></li>    
+#{include 'nav/dropdownopen.html' /}
+  <li><a href="/logout">Logout</a></li>
+  <li class="divider"></li>
+  #{if user instanceof models.Student}
+  <li class="nav-header"><strong>Search Options</strong></li>
+  <li class="active"><a href="/courseSearch">Course</a></li>
+  <li><a href="/accommodationSearch">Accommodation</a></li>
+  <li><a href="/internshipSearch">Internship</a></li>
+#{/if} 
+#{if user instanceof models.College}
+  <li class="nav-header"><strong>Options</strong></li>
+  <li class="active"><a href="/courseSearch">Course Search</a></li>
+  <li><a href="/addRemoveCourse">Add/Remove Course</a></li>
+  <li><a href="/courseApplicants">Course Applicants</a></li>
+#{/if}
+#{include 'nav/dropdownclose.html' /} 
+#{include 'nav/navclose.html' /}
+
+
+
+<!-- Course Search Results Begin -->
+<div class="container">
+  <div class="row">
+  <div class="col-lg-1"></div>
+    <div class="col-lg-10">
+    <h2><span class="text-muted">Course Search Results</span></h2>
+      <div class="well">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <td><strong>College</strong></td>
+              <td><strong>School/Department</strong></td>
+              <td><strong>Course Title</strong></td>
+              <td><strong>Level</strong></td>
+              <td><strong>Points</strong></td>
+            </tr>
+          </thead>
+          <tbody>
+              #{list items: courseResults, as:'result'}
+              <tr>
+                <td>${result.college.collegeName}</td>
+                <td>${result.schoolName}</td>
+                <td>${result.courseTitle}</td>
+                <td>${result.level}</td>
+                <td>${result.points}</td>
+                #{if user instanceof models.Student}
+                  <td><a href="@{CourseSearch.applyForCourse(result.id)}" title="Course Apply"><button type="button" class="btn btn-success">Apply</button></a></td>
+                #{/if}
+               </tr>
+             #{/list}
+          </tbody>
+        </table>
+        <p class="pull-right"><strong><a href="/CourseSearch/index">Back to Searches</a></strong></p>
+      </div>
+    </div>
+    <div class="col-lg-1"></div>
+  </div>
+</div>
+<!-- Course Search Results End -->

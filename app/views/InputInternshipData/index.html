@@ -1,0 +1,134 @@
+#{extends 'main.html' /}
+#{set title:'Employer' /}
+#{include 'nav/navopen.html' /}
+  <li><a href="/home">Home</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/contact">Contact</a></li>    
+#{include 'nav/dropdownopen.html' /}
+  <li><a href="/aims">Aim(s)</a></li> 
+  <li><a href="/logout">Logout</a></li>
+  <li class="divider"></li>
+  <li class="nav-header"><strong>Options</strong></li>
+  <li><a href="/internshipSearch">Internship Search</a></li>
+  <li class="active"><a href="/addRemoveInternship">Add/Remove Internship</a></li>
+  <li><a href="/internshipApplicants">Internship Applicants</a></li>
+#{include 'nav/dropdownclose.html' /} 
+#{include 'nav/navclose.html' /}
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="featurette">
+        <img class="featurette-image img-circle pull-left" src="/public/assets/images/college.jpg">
+        <h1 class="featurette-heading">${user.firstName} ${user.lastName} wants to add or remove added Internships.<br></h1>
+        <p class="lead"><span class="text-muted">Please note that all fields need to be completed for an internship
+        to be successfully added to our database.</span>
+        </p>
+        <hr class="featurette-divider">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Adding Internships by Employer Begin -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4"></div>
+      <div class="col-lg-6">
+        <form class="form-horizontal" action="inputInternshipData/addInternship" method="POST">   
+          #{ifErrors}
+            #{errors}  
+              <h2 id="alert">
+              ${error}<br></h2>
+            #{/errors}
+  	      #{/ifErrors}
+          <h2><span class="text-muted">Add Internship(s)</span></h2>
+          <p class="lead">Job Title</p>
+          <div class="form-group">
+            <div class="col-lg-10">
+              <input type="text" class="form-control" name="jobTitle" placeholder="Enter Job Title">
+            </div>
+          </div>
+          <br>
+          <p class="lead">Career Sector</p>
+          <div class="form-group">
+            <div class="col-lg-10">
+              <select type="text" class="form-control" name="careerSector">
+				  <option title="Select sector" value="" selected="">Select Sector</option>
+				  <option title="accountancy" value="Accountancy and financial management">Accountancy and financial management</option>
+				  <option title="agriculture" value="Agriculture, animal and plant resources">Agriculture, animal and plant resources</option>
+				  <option title="banking" value="Banking, insurance and financial services">Banking, insurance and financial services</option>
+				  <option title="charities" value="Charities and voluntary sector">Charities and voluntary sector</option>
+				  <option title="construction" value="Construction, civil engineering and QS">Construction, civil engineering and QS</option>
+				  <option title="emergency" value="Emergency services and armed forces">Emergency services and armed forces</option>
+				  <option title="engineering" value="Engineering">Engineering</option>
+				  <option title="environment" value="Environment and natural resources">Environment and natural resources</option>
+				  <option title="fundmg" value="Fund management/admin, investment banking">Fund management/admin, investment banking</option>
+				  <option title="hospitality" value="Hospitality, sport, leisure and tourism">Hospitality, sport, leisure and tourism</option>
+				  <option title="humanRes" value="Human resources, recruitment and training">Human resources, recruitment and training</option>
+				  <option title="it" value="IT and telecoms">IT and telecoms</option>
+				  <option title="languages" value="Languages and culture">Languages and culture</option>
+				  <option title="law" value="Law, legal services and patents">Law, legal services and patents</option>
+				  <option title="library" value="Library and information services">Library and information services</option>
+				  <option title="logistics" value="Logistics and transport">Logistics and transport</option>
+				  <option title="mgt" value="Management consulting">Management consulting</option>
+				  <option title="mgtbusiness" value="Management, business, administration">Management, business, administration</option>
+				  <option title="manufacturing" value="Manufacturing and processing">Manufacturing and processing</option>
+				  <option title="marketing" value="Marketing, advertising and PR">Marketing, advertising and PR</option>
+				  <option title="media" value="Media and publishing">Media and publishing</option>
+			      <option title="medical" value="Medical and healthcare">Medical and healthcare</option>
+				  <option title="performing" value="Performing and creative arts">Performing and creative arts</option>
+			      <option title="property" value="Property">Property</option>
+				  <option title="publicSector" value="Public sector and civil service">Public sector and civil service</option>
+			      <option title="retail" value="Retail, sales and customer services">Retail, sales and customer services</option>
+				  <option title="science" value="Science, research and development">Science, research and development</option>
+				  <option title="social" value="Social, community and youth">Social, community and youth</option>
+				  <option title="teaching" value="Teaching and education">Teaching and education</option>
+				</select>
+            </div>
+          </div>
+          <br>
+           <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Add Internship</button>
+        </div> 
+      </form>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+<!-- Adding Internships by Employer End -->
+<!-- List of Added Internships by Employer Begin -->
+<div class="container">
+  <div class="row">
+  <div class="col-lg-1"></div>
+    <div class="col-lg-10">
+    <h2><span class="text-muted">Added Internships</span></h2>
+      <div class="well">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <td><strong>Employer</strong></td>
+              <td><strong>Location</strong></td>
+              <td><strong>Internship Title</strong></td>
+              <td><strong>Career Sector</strong></td>
+            </tr>
+          </thead>
+          <tbody>
+            #{list items:user.internships, as:'internship'}
+              <tr>
+                <td>${internship.employer.employerName}</td>
+                <td>${internship.employer.employerAddress}</td>
+                <td>${internship.jobTitle}</td>
+                <td>${internship.careerSector}</td>
+                 <td><a href="/inputInternshipData/removeInternship/${internship.id}" title="Remove Internship"><button type="button" class="btn btn-danger">Remove</button></a></td>
+              </tr>
+            #{/list}
+          </tbody>
+        </table>
+        <p class="pull-right"><strong><a href="/Home/index" >Back to Home</a></strong></p>
+      </div>
+    </div>
+    <div class="col-lg-1"></div>
+  </div>
+</div>
+<!-- List of Added Internships by Employer End -->

@@ -1,0 +1,55 @@
+#{extends 'main.html' /}
+#{set title:'Employer: Add/Remove Internship' /}
+#{include 'nav/navopen.html' /}
+  <li><a href="/home">Home</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/contact">Contact</a></li>    
+#{include 'nav/dropdownopen.html' /}
+  <li><a href="/aims">Aim(s)</a></li> 
+  <li><a href="/logout">Logout</a></li>
+  <li class="divider"></li>
+  <li class="nav-header"><strong>Options</strong></li>
+  <li><a href="/internshipSearch">Internship Search</a></li>
+  <li><a href="/addRemoveInternship">Add/Remove Internship</a></li>
+  <li class="active"><a href="/internshipApplicants">Internship Applicants</a></li>
+#{include 'nav/dropdownclose.html' /} 
+#{include 'nav/navclose.html' /}
+
+
+<!-- List of Internship Applicants Begin -->
+<div class="container">
+  <div class="row">
+  <div class="col-lg-1"></div>
+    <div class="col-lg-10">
+    <h2><span class="text-muted">Internship Applicants</span></h2>
+      <div class="well">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <td><strong>Applicant's Full Name</strong></td>
+              <td><strong>Applicant's E-mail</strong></td>
+              <td><strong>Job Title</strong></td>
+              <td><strong>Career Sector</strong></td>
+            </tr>
+          </thead>
+          <tbody>
+            #{list items: user.internships, as: 'internship'}
+              #{list items: internship.internshipApplicants, as:'applicant'}
+                <tr>
+                  <td>${applicant.firstName} ${applicant.lastName}</td>
+                  <td>${applicant.email}</td>
+                  <td>${internship.jobTitle}</td>
+                  <td>${internship.careerSector}</td>
+                  <td><a href="#" title="Accept Applicant"><button type="button" class="btn btn-success">Accept</button></a></td>
+                  <td><a href="@{InternshipApplicants.rejectFromInternship(internship.id, applicant.id)}" title="Reject Applicant"><button type="button" class="btn btn-danger">Reject</button></a></td>
+                </tr>
+              #{/list}
+            #{/list}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-lg-1"></div>
+  </div>
+</div>
+<!-- List of Internship Applicants End -->

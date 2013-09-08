@@ -1,0 +1,81 @@
+College(marge):
+    firstName: Marge
+    lastName: Simpson
+    collegeName: Springfield College
+    collegeAddress: Long Street, Springfield
+    email: springfield@college.com
+    password: secret
+    mobileCountyCode: 353
+    mobile: 123456
+    securityQuestion: What is the name of your pet?
+    answer: Pinchy
+    received: 25
+    
+Student(lisa):
+    firstName: Lisa
+    lastName: Simpson
+    email: lisa@simpson.com
+    password: secret
+    date: Wed Sep 10 00:00:00 BST 1986
+    gender: Female
+    nationality: America
+    mobileCountyCode: 353 
+    mobile: 56565
+    securityQuestion: What is the name of your first stuffed animal?
+    answer: Blinky
+    
+Employer(homer):
+    firstName: Homer
+    lastName: Simpson
+    employerName: Homer Simpson Ltd
+    employerAddress: Sunny Street, Springfield
+    email: homersimpson@ltd.com
+    password: secret
+    mobileCountyCode: 353
+    mobile: 878787
+    securityQuestion: What is your mother's middle name? 
+    answer: Jay 
+    
+Agency(abraham):
+    firstName: Abraham
+    lastName: Simpson
+    agencyName: A Simpson Ltd
+    agencyAddress: Green Street, Springfield
+    email: abraham@simpsonltd.com
+    password: secret
+    mobileCountyCode: 353
+    mobile: 999999
+    securityQuestion: What is your mother's middle name? 
+    answer: Kate 
+    
+Course(course1):
+    college:
+            - marge
+    schoolName: Business
+    courseTitle: Bachelor of Business(Hons)
+    level: 8
+    points: 300
+    date: 2013-09-07 16:29:24.778  
+    
+Accommodation(accommodation1):  
+    city: Dublin       
+    accommodationClass: Standard  
+    furnishStatus: Furnished   
+    rent: 900            
+    accommodationType: house        
+    nmrBathrooms: 2     
+    nmrCommonRooms: 1  
+    nmrSingleBedrooms: 1
+    nmrDoubleBedrooms: 2
+    nmrTwinBedrooms: 3
+    nmrOtherBedrooms: 1
+    date: 2013-09-07 16:29:24.778
+    agency: 
+           - abraham
+           
+Internship(internship1):
+    jobTitle: English Teacher
+    careerSector: Teaching and education  
+    date: 2013-09-07 16:29:24.778
+    employer:
+             - homer

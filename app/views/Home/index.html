@@ -1,0 +1,234 @@
+#{extends 'main.html' /}
+#{set title:'studEnts' /}
+#{include 'nav/navopen.html' /}
+  <li class="active"><a href="/home">Home</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/contact">Contact</a></li>   
+#{include 'nav/dropdownopen.html' /}
+  <li><a href="/aims">Aim(s)</a></li> 
+  <li><a href="/logout">Logout</a></li>
+#{include 'nav/dropdownclose.html' /} 
+#{include 'nav/navclose.html' /}
+
+
+<div class="container">
+  <div class="row">
+  <div class="col-lg-3"></div>
+    <div class="col-lg-7">
+      #{if user instanceof models.Student}
+        <h1><span class="text-muted">${user.firstName} ${user.lastName}<br>Welcome to Student Services!</span></h1>
+        <h2>Check your Applications <a class="btn btn-primary" href="/applicationsStatus">Check</a></h2><br> 
+      #{/if}    
+      #{if user instanceof models.College}
+        <h1><span class="text-muted">${user.firstName} ${user.lastName} of ${user.collegeName}<br>Welcome to College Services!</span></h1><br>
+      #{/if}
+      #{if user instanceof models.Agency}
+        <h1><span class="text-muted">${user.firstName} ${user.lastName} of ${user.agencyName}<br>Welcome to Agency Services!</span></h1><br>
+      #{/if}    
+      #{if user instanceof models.Employer}
+        <h1><span class="text-muted">${user.firstName} ${user.lastName} of ${user.employerName}<br>Welcome to Employer Services!</span></h1><br>
+      #{/if}     
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+<div class="container marketing">
+  <div class="row">
+    #{if user instanceof models.Student}
+      <div class="col-lg-4">
+        <img class="img-circle" src="/public/assets/images/courses.jpg">
+        <h1>Course</h1>
+        <p>Are you looking for a course? This search facility will assist you 
+           to find the right course for you based on course title, college, department and more.</p>
+        <p><a class="btn btn-default" href="/courseSearch">Search Now! &raquo;</a></p>
+      </div>
+      <div class="col-lg-4">
+        <img class="img-circle" src="/public/assets/images/rent.jpg">
+        <h1>Accommodation</h1>
+        <p>Are you looking for a student accomodation? We offer an excellent search facility to help you 
+        find all available places in your location and book a viewing.</p>
+        <p><a class="btn btn-default" href="/accommodationSearch">Search Now! &raquo;</a></p>
+      </div>
+      <div class="col-lg-4">
+        <img class="img-circle" src="/public/assets/images/internship.jpg">
+        <h1>Internship</h1>
+        <p>Are you interested in developing knowledge and experience in one of the best and most prestige companies? 
+           You can search and apply for an internship with us.
+        </p>
+        <p><a class="btn btn-default" href="/internshipSearch">Search Now! &raquo;</a></p>
+      </div>
+    #{/if}
+    #{if user instanceof models.College}
+      <div class="col-lg-4">
+        <img class="img-circle" src="/public/assets/images/search.jpg">
+        <h1>Course Search</h1>
+        <p>This search tool will help to make sure that particular course is in the list of courses 
+        available for Students. You can also remove the course as soon as you find it.</p>
+        <p><a class="btn btn-default" href="/courseSearch">Search Now! &raquo;</a></p>
+      </div>
+      <div class="col-lg-4">
+        <img class="img-circle" src="/public/assets/images/addremove.jpg">
+        <h1>Add/Remove Course</h1>
+        <p>You can add any course run by the College you are representing or remove any course which is no longer available
+        for Students.</p>
+        <p><a class="btn btn-default" href="/addRemoveCourse">Go! &raquo;</a></p>
+      </div>
+      <div class="col-lg-4">
+        <img class="img-circle" src="/public/assets/images/courses.jpg">
+        <h1>Course Applicants</h1>
+        <p>You can check out who applied for which course run by the College. You can also accept or reject Applicants.
+        </p>
+        <p><a class="btn btn-default" href="/courseApplicants">Go! &raquo;</a></p>
+      </div>
+    #{/if}
+    #{if user instanceof models.Agency}
+      <div class="col-lg-4">
+        <img class="img-circle" src="/public/assets/images/search.jpg">
+        <h1>Accommodation Search</h1>
+        <p>This search tool will help you to make sure that your accommodations exist in our searching database and remove
+        it if necessary.</p>
+        <p><a class="btn btn-default" href="/accommodationSearch">Search Now! &raquo;</a></p>
+      </div>
+      <div class="col-lg-4">
+        <img class="img-circle" src="/public/assets/images/addremove.jpg">
+        <h1>Add/Remove Accommodation</h1>
+        <p>You can add or remove any accommodation from our search database to keep it up to date for Students.</p>
+        <p><a class="btn btn-default" href="/addRemoveAccommodation">Go! &raquo;</a></p>
+      </div>
+      <div class="col-lg-4">
+        <img class="img-circle" src="/public/assets/images/rent.jpg">
+        <h1>Accommodation Viewing Bookings</h1>
+        <p>You can check out bookings made by Students in order to contact them directly to confirm viewing.
+        </p>
+        <p><a class="btn btn-default" href="/accommodationViewings">Go! &raquo;</a></p>
+      </div>
+    #{/if}
+    #{if user instanceof models.Employer}
+      <div class="col-lg-4">
+        <img class="img-circle" src="/public/assets/images/search.jpg">
+        <h1>Internship Search</h1>
+        <p>This search facility will help you to make sure that internships you have added exist in the Student's 
+        searching database so that they can apply for it online.</p>
+        <p><a class="btn btn-default" href="/internshipSearch">Search Now! &raquo;</a></p>
+      </div>
+      <div class="col-lg-4">
+        <img class="img-circle" src="/public/assets/images/addremove.jpg">
+        <h1>Add/Remove Internship</h1>
+        <p>You can add or remove any internship from our search database to keep it up to date for Students.</p>
+        <p><a class="btn btn-default" href="/addRemoveInternship">Go! &raquo;</a></p>
+      </div>
+      <div class="col-lg-4">
+        <img class="img-circle" src="/public/assets/images/internship.jpg">
+        <h1>Internship Applications</h1>
+        <p>You can check out applications made by Students in order to contact them directly to confirm interview.
+        </p>
+        <p><a class="btn btn-default" href="/internshipApplicants">Go! &raquo;</a></p>
+      </div>
+    #{/if}
+  </div>
+  <hr class="featurette-divider">
+  #{if user instanceof models.Student}
+    <div class="featurette">
+      <img class="featurette-image img-circle pull-right" src="/public/assets/images/study-abroad.jpg">
+      <h1 class="featurette-heading">Study abroad? <span class="text-muted">We know it sounds a little crazy but ...</span></h1>
+      <p class="lead">You will be surprised how many students decide to study abroad nowadays. In 2009, as many as 3.34 million students studied abroad so don't waste any more time. It's not too late, pick destination and pack your bags it is time for a challange. More information about studying abroad can be found<a href="http://www.studyabroad.com/" title="StudyAbroad" class="studyAbroad"> <b>here.</b></a>
+      </p>
+    </div>
+    <hr class="featurette-divider">
+    <div class="featurette">
+      <img class="featurette-image img-circle pull-left" src="/public/assets/images/travelling.jpg">
+      <h1 class="featurette-heading">Discover the World?<span class="text-muted"> Check out some interesting and breath taking destinations.</span></h1>
+      <p class="lead">Travelling can be super educational and can meta-change your perspective on things. It can inspire you to take that first step into leaving your dreary life and discovering the world. For more information check <a href="http://www.discover-the-world.co.uk/en/" title="Travel" class="Travel"> <b>here.</b></a></p>
+    </div>
+    <hr class="featurette-divider">
+    <div class="featurette">
+      <img class="featurette-image img-circle pull-right" src="/public/assets/images/fun.jpg">
+      <h1 class="featurette-heading">How important are Internships?</h1>
+      <p class="lead">"Internships May Be The Easiest Way To A Job In 2013." For more information read <a href="http://www.ticketmaster.ie/" title="Fun" class="Fun"><b>here.</b></a></p>
+    </div>
+    <hr class="featurette-divider">
+  #{/if}
+  #{if user instanceof models.College}
+    <div class="featurette">
+      <img class="featurette-image img-circle pull-right" src="/public/assets/images/study-abroad.jpg">
+      <h1 class="featurette-heading">Recent trends for education <span class="text-muted">2013</span></h1>
+      <p class="lead">"Online Education Will Be the Next 'Bubble' To Pop, Not Traditional University Learning" according to Forbes<a href="http://www.forbes.com/sites/johntamny/2013/06/09/online-education-will-be-the-next-bubble-to-pop-not-traditional-university-learning/" title="Education Trends" class="educationTrends"> <b>Read here</b></a>
+      </p>
+    </div>
+    <hr class="featurette-divider">
+    <div class="featurette">
+      <img class="featurette-image img-circle pull-left" src="/public/assets/images/travelling.jpg">
+      <h1 class="featurette-heading">Holidays!<span class="text-muted"> Check out some interesting and breath taking destinations.</span></h1>
+      <p class="lead">Book your holidays in advance. For more information check <a href="http://www.discover-the-world.co.uk/en/" title="Travel" class="Travel"> <b>here.</b></a></p>
+    </div>
+    <hr class="featurette-divider">
+    <div class="featurette">
+      <img class="featurette-image img-circle pull-right" src="/public/assets/images/fun.jpg">
+      <h1 class="featurette-heading">Bored and have no plans for weekend?<span class="text-muted">Check this out.</span></h1>
+      <p class="lead">Concerts, shows, festivals, gigs, clubs, theatre, cinema, football, hurling and more. For more information read <a href="http://www.ticketmaster.ie/" title="Fun" class="Fun"><b>here.</b></a></p>
+    </div>
+    <hr class="featurette-divider">
+  #{/if} 
+  #{if user instanceof models.Agency}
+    <div class="featurette">
+      <img class="featurette-image img-circle pull-right" src="/public/assets/images/study-abroad.jpg">
+      <h1 class="featurette-heading">Global propert news.</h1>
+      <p class="lead">Stay up to date with the property market. For more information read<a href="http://www.knightfrank.com/news/" title="Property news" class="propertyNews"> <b>here.</b></a>
+      </p>
+    </div>
+    <hr class="featurette-divider">
+    <div class="featurette">
+      <img class="featurette-image img-circle pull-left" src="/public/assets/images/travelling.jpg">
+      <h1 class="featurette-heading">Holidays!<span class="text-muted"> Check out some interesting and breath taking destinations.</span></h1>
+      <p class="lead">Book your holidays in advance. For more information check <a href="http://www.discover-the-world.co.uk/en/" title="Travel" class="Travel"> <b>here.</b></a></p>
+    </div>
+    <hr class="featurette-divider">
+    <div class="featurette">
+      <img class="featurette-image img-circle pull-right" src="/public/assets/images/fun.jpg">
+      <h1 class="featurette-heading">Bored and have no plans for weekend?<span class="text-muted">Check this out.</span></h1>
+      <p class="lead">Concerts, shows, festivals, gigs, clubs, theatre, cinema, football, hurling and more. For more information read <a href="http://www.ticketmaster.ie/" title="Fun" class="Fun"><b>here.</b></a></p>
+    </div>
+    <hr class="featurette-divider">
+  #{/if}
+  #{if user instanceof models.Employer}
+    <div class="featurette">
+      <img class="featurette-image img-circle pull-right" src="/public/assets/images/study-abroad.jpg">
+      <h1 class="featurette-heading">Business News <span class="text-muted">Stay up to date.</span></h1>
+      <p class="lead">You can read news<a href="http://www.forbes.com/" title="Employers Services" class="employersServices"> <b>here.</b></a>
+      </p>
+    </div>
+    <hr class="featurette-divider">
+    <div class="featurette">
+      <img class="featurette-image img-circle pull-left" src="/public/assets/images/travelling.jpg">
+      <h1 class="featurette-heading">Discover the World!<span class="text-muted"> Check out some interesting and breath taking destinations.</span></h1>
+      <p class="lead">Travelling can be super educational and can meta-change your perspective on things. It can inspire you to take that first step into leaving your dreary life and discovering the world. For more information check <a href="http://www.discover-the-world.co.uk/en/" title="Travel" class="Travel"> <b>here.</b></a></p>
+    </div>
+    <hr class="featurette-divider">
+    <div class="featurette">
+      <img class="featurette-image img-circle pull-right" src="/public/assets/images/fun.jpg">
+      <h1 class="featurette-heading">Have some fun with your friends? <span class="text-muted">Check this out, it will blow your mind.</span></h1>
+      <p class="lead">Concerts, shows, festivals, gigs, clubs, theatre, cinema, football, hurling and more. For more information read <a href="http://www.ticketmaster.ie/" title="Fun" class="Fun"><b>here.</b></a></p>
+    </div>
+    <hr class="featurette-divider">
+  #{/if}
+  <footer>
+   <div id="social">
+      <div class="col-md-3 col-md-offset-3 social">
+        <!-- AddThis Button Start -->
+        <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+          <a class="addthis_button_preferred_1"></a>
+          <a class="addthis_button_preferred_2"></a>
+          <a class="addthis_button_compact"></a>
+          <a class="addthis_counter addthis_bubble_style"></a>
+        </div>
+        <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51e5f5d9549fdf9b"></script>
+        <!-- AddThis Button End -->
+      </div>
+    </div><br>
+    <div id="copyright">
+      <p class="pull-right"><a href="#">Back to top</a></p>
+      <p>&copy; 2013 studEnts, Inc. &middot; <a href="/terms">Privacy & Terms of Service</a></p>
+    </div>
+  </footer>
+</div>

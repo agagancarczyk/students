@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>#{get 'title' /}</title>
+    <meta charset="utf-8">
+        <link rel="stylesheet" media="screen" href="@{'/public/bootstrap/css/bootstrap.css'}">
+        <link rel="stylesheet" media="screen" href="@{'/public/carousel/carousel.css'}">
+        <link rel="stylesheet" media="screen" href="@{'/public/bootstrap/css/mybootstrap.css'}">
+  <style>
+  body {
+    background-color: #5a5a5a;
+    padding-bottom: 40px;
+  }
+  
+  /* References: http://support.addthis.com/customer/portal/questions/1136093-share-buttons-in-center-position */      
+  div.addthis_toolbox {
+  width:180px;
+  margin: 0 auto;
+ }
+  </style>
+  </head>  
+  <body>
+    <div class="container-fluid">
+      #{doLayout /}
+    </div>
+    <script type='text/javascript' src="@{'/public/assets/js/jquery.js'}"></script>
+    <script type='text/javascript' src="@{'/public/bootstrap/js/bootstrap.min.js'}"></script>
+    <script type='text/javascript' src="@{'/public/assets/js/holder.js'}"></script>
+  </body>
+</html>

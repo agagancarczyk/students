@@ -1,0 +1,130 @@
+#{extends 'main.html' /}
+#{set title:'Students Applications' /}
+#{include 'nav/navopen.html' /}
+  <li><a href="/home">Home</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/contact">Contact</a></li>    
+#{include 'nav/dropdownopen.html' /}
+  <li><a href="/aims">Aim(s)</a></li> 
+  <li><a href="/logout">Logout</a></li>
+  <li class="divider"></li>
+  <li class="nav-header"><strong>Search Options</strong></li>
+  <li><a href="/courseSearch">Course</a></li>
+  <li><a href="/accommodationSearch">Accommodation</a></li>
+  <li><a href="/internshipSearch">Internship</a></li>
+#{include 'nav/dropdownclose.html' /} 
+#{include 'nav/navclose.html' /}
+
+
+
+<!-- List of Courses applied for Begin -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+    <h3><span class="text-muted">Courses <span class="badge">${user.appliedForCourses.size()}</span></span></h3>
+      <div class="well">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <td><strong>College</strong></td>
+              <td><strong>College Location</strong></td>
+              <td><strong>Course Title</strong></td>
+              <td><strong>Added by College</strong></td>
+            </tr>
+          </thead>
+          <tbody>
+            #{list items: user.appliedForCourses, as:'course'}
+                <tr>
+                  <td>${course.college.collegeName}</td>
+                  <td>${course.college.collegeAddress}</td>
+                  <td>${course.courseTitle}</td>
+                  <td>${course.date}</td>
+                  <td><p><strong>Processing!</strong></p></td>
+                </tr>
+              #{/list}
+          </tbody>
+        </table>
+        <p id="alert"><strong>NOTE: Application will be removed automatically if unsuccessful.</strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- List of Course Applicants End -->
+<!-- List of Accommodation Bookings Begin -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+    <h3><span class="text-muted">Accommodation Bookings <span class="badge">${user.bookedViewings.size()}</span></span></h3>
+      <div class="well">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <td><strong>Agency</strong></td>
+              <td><strong>City</strong></td>
+          	  <td><strong>Rent(&#8364)</strong></td>
+          	  <td><strong>Type</strong></td>
+              <td><strong>Bathrooms</strong></td>
+              <td><strong>Single bedrooms</strong></td>
+              <td><strong>Double bedrooms</strong></td>
+              <td><strong>Twin bedrooms</strong></td>
+              <td><strong>Other bedrooms</strong></td>
+              <td><strong>Added by Agency</strong></td>
+            </tr>
+          </thead>
+          <tbody>
+            #{list items: user.bookedViewings, as:'booking'}
+              <tr>
+                <td>${booking.agency.agencyName}</td>
+                <td>${booking.city}</td>
+                <td>${booking.rent}</td>
+                <td>${booking.accommodationType}</td>
+                <td>${booking.nmrBathrooms}</td>
+                <td>${booking.nmrSingleBedrooms}</td>
+                <td>${booking.nmrDoubleBedrooms}</td>
+                <td>${booking.nmrTwinBedrooms}</td>
+                <td>${booking.nmrOtherBedrooms}</td>
+                <td>${booking.date}</td>
+                <td><p><strong>Processing!</strong></p></td>
+              </tr>
+            #{/list}
+          </tbody>
+        </table>
+        <p id="alert"><strong>NOTE: Application will be removed automatically if unsuccessful.</strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- List of Accommodation Bookings End -->
+<!-- List of Internships applied for Begin -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+    <h3><span class="text-muted">Internships <span class="badge">${user.appliedForInternships.size()}</span></span></h3>
+      <div class="well">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <td><strong>Employer</strong></td>
+              <td><strong>Employer Location</strong></td>
+              <td><strong>Job Title</strong></td>
+              <td><strong>Added by Employer</strong></td>
+            </tr>
+          </thead>
+          <tbody>
+            #{list items: user.appliedForInternships, as:'internship'}
+                <tr>
+                  <td>${internship.employer.employerName}</td>
+                  <td>${internship.employer.employerAddress}</td>
+                  <td>${internship.jobTitle}</td>
+                  <td>${internship.date}</td>
+                  <td><p><strong>Processing!</strong></p></td>
+                </tr>
+              #{/list}
+          </tbody>
+        </table>
+        <p id="alert"><strong>NOTE: Application will be removed automatically if unsuccessful.</strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- List of Internships applied for End -->

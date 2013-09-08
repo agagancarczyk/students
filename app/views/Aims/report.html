@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-lg-10">
+    <div id="posts">
+      <div class="well">
+      <p><span class="text-muted"><strong>Your Donations</strong></span></p>
+        <table class="table">
+          <thead>
+            <tr>
+              <td><strong>Global Donation No.</strong></td>
+              <td><strong>Donor's email</strong></td>
+              <td><strong>Amount(&#8364)</strong></td>
+              <td><strong>Method donated</strong></td>
+            </tr>
+          </thead>
+          <tbody>
+            #{list items:donations, as:'donation'}
+              <tr>
+                <td>${donation.id}</td>
+                <td>${donation.from.email}</td>
+                <td>${donation.received}</td>
+                <td>${donation.methodDonated}</td>
+              </tr>
+            #{/list}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

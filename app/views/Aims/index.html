@@ -1,0 +1,103 @@
+#{extends 'main.html' /}
+#{set title:'studEnts' /}
+#{include 'nav/navopen.html' /}
+  <li><a href="/home">Home</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/contact">Contact</a></li>   
+#{include 'nav/dropdownopen.html' /}
+  <li class="active"><a href="/aims">Aim(s)</a></li> 
+  <li><a href="/logout">Logout</a></li>
+#{include 'nav/dropdownclose.html' /} 
+#{include 'nav/navclose.html' /}
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10">
+      <h2>Hello, ${user.firstName} ${user.lastName} (${user.email})!</h2>
+	    <p><span class="text-muted">We are very happy that you are using our Service and we have some extra feature proposals for you to improve your experience with us.
+	    <br>Please feel free to donate.</span></p><br>
+	    <div class="well">
+	    <p><span class="text-muted"><strong>Aims</strong></span></p>
+	      <table class="table table-hover">
+	        <thead>
+	          <tr>
+	            <td><strong>Aim No.</strong></td>
+	            <td><strong>Aim Description</strong></td>
+	            <td><strong>Donation</strong></td>
+	            <td><strong>Real Donation with Bitcoins</strong></td>
+	          </tr>
+	        </thead>
+	        <tbody>
+	          <tr>
+	            <td>1</td>
+	            <td>Enabling Students to see status of their applications <br>i.e processing, accepted, removed. This in turn <br>
+	                would add some extra functionality for other users of <br>studEnts services as well. They will no longer <br>
+	                need to contact Students to inform them about <br>their applications status. 
+	            </td>
+	            <td><form action="/donate" method="POST">
+	              <div class="form-group">
+	                <div class="col-xs-2 col-md-2">
+	                  <div class="controls">
+	                    <select class="form-control" name="amountDonated">
+	                      <option value="10">&#8364 10</option>
+	                      <option value="20">&#8364 20</option>
+	                      <option value="30">&#8364 30</option>
+	                      <option value="40">&#8364 40</option>
+	                      <option value="50">&#8364 50</option>
+	                    </select><br>
+	                    <label id="donation" class="radio-inline">
+                          <input type="radio" name="methodDonated" value="paypal" checked="checked"><strong>PayPal</strong>
+	                    </label>
+	                    <label id="donation" class="radio-inline">  
+	                      <input type="radio" name="methodDonated" value="direct" checked="checked"><strong>Direct</strong>
+	                    </label>
+		              </div>
+		            </div><br>
+		            <button type="submit" class="btn btn-primary">Donate</button>
+	              </div>
+	            </form>
+	            <p>Amount target achieved:</p>
+	              <div class="progress progress-striped active">
+	                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="0" style="width: ${progress}">
+	                  <span class="sr-only">${progress} Complete</span>
+	                </div>
+	              </div>
+	            </td>
+	            <td>
+	              <a class="coinbase-button" data-code="5be2b7467849195a35807c01aaad30cc" href="https://coinbase.com/checkouts/5be2b7467849195a35807c01aaad30cc">Pay With Bitcoin</a>
+	              <script src="https://coinbase.com/assets/button.js" type="text/javascript"></script>
+	            </td>
+	          </tr>
+	        </tbody>
+	      </table>
+	    </div>
+	  </div>
+	</div>
+	<!-- Donation Report Begin-->
+	#{include 'Aims/report.html' /}
+    <!-- Donation Report End -->
+	<hr class="featurette-divider">
+	<!-- footer -->
+    <footer>   
+      <div id="social">
+        <div class="col-md-3 col-md-offset-3 social">
+          <!-- AddThis Button Start -->
+          <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+            <a class="addthis_button_preferred_1"></a>
+            <a class="addthis_button_preferred_2"></a>
+            <a class="addthis_button_compact"></a>
+            <a class="addthis_counter addthis_bubble_style"></a>
+          </div>
+          <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+          <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51e5f5d9549fdf9b"></script>
+          <!-- AddThis Button End -->
+        </div>
+      </div><br>
+      <div id="copyright">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2013 studEnts, Inc. &middot; <a href="/terms">Privacy & Terms of Service</a></p>
+      </div>
+    </footer>
+  </div>        

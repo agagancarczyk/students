@@ -1,0 +1,58 @@
+@import url('//fonts.googleapis.com/css?family=Droid+Sans:400,700');
+
+/*Additional bootstrap styling.
+ */
+ 
+h1, h2, p, legend, select
+{
+	color: #6699FF;
+}
+
+h4, address 
+{
+	color: #CCCCFF;
+}
+
+#alert 
+{
+	color: #E60000;
+}
+
+#error 
+{
+	color: 	#D17519;
+}
+
+#success 
+{
+	color: #00B800;
+}
+
+label 
+{
+	color: #CCCCFF;
+	font-size: 18px;
+}
+
+#donation
+{
+	color: #888888;
+	font-size: 12px;
+}
+
+.accordion-group 
+{
+	border: none;
+}
+
+.well
+{
+	border: solid 1px #888888;
+	background-color: #CCCCCC;
+}
+
+table 
+{
+	
+	background-color: white;
+}

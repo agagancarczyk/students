@@ -1,0 +1,60 @@
+#{extends 'main.html' /}
+#{set title:'Accommodation Booking Applicants' /}
+#{include 'nav/navopen.html' /}
+  <li><a href="/home">Home</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/contact">Contact</a></li>    
+#{include 'nav/dropdownopen.html' /}
+  <li><a href="/aims">Aim(s)</a></li> 
+  <li><a href="/logout">Logout</a></li>
+  <li class="divider"></li>
+  <li class="nav-header"><strong>Options</strong></li>
+  <li><a href="/accommodationSearch">Accommodation Search</a></li>
+  <li><a href="/addRemoveAccommodation">Add/Remove Accommodation</a></li>
+  <li class="active"><a href="/accommodationViewings">Accommodation Viewings</a></li>
+#{include 'nav/dropdownclose.html' /} 
+#{include 'nav/navclose.html' /}
+
+
+<!-- List of Accommodation Bookings Begin -->
+<div class="container">
+  <div class="row">
+  <div class="col-lg-1"></div>
+    <div class="col-lg-10">
+    <h2><span class="text-muted">Accommodation Viewing Bookings:</span></h2>
+      <div class="well">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <td><strong>Applicant's Full Name</strong></td>
+              <td><strong>Applicant's E-mail</strong></td>
+              <td><strong>Accommodation Id</strong></td>
+              <td><strong>City</strong></td>
+              <td><strong>Furnish Status</strong></td>
+              <td><strong>Rent(&#8364)</strong></td>
+            </tr>
+          </thead>
+          <tbody>
+            #{list items: user.accommodations, as: 'accommodation'}
+              #{list items: accommodation.bookingApplicants, as:'applicant'}
+                <tr>
+                  <td>${applicant.firstName} ${applicant.lastName}</td>
+                  <td>${applicant.email}</td>
+                  <td>${accommodation.id}</td>
+                  <td>${accommodation.city}</td>
+                  <td>${accommodation.furnishStatus}</td>
+                  <td>${accommodation.rent}</td>
+                  <td><a href="#" title="Accept Booking"><button type="button" class="btn btn-success">Accept</button></a></td>
+                  <td><a href="@{AccommodationApplicants.rejectFromViewing(accommodation.id, applicant.id)}" title="Reject Booking"><button type="button" class="btn btn-danger">Reject</button></a></td>
+                </tr>
+              #{/list}
+            #{/list}
+          </tbody>
+        </table>
+        <p class="pull-right"><strong><a href="/Home/index" >Back to Home</a></strong></p>
+      </div>
+    </div>
+    <div class="col-lg-1"></div>
+  </div>
+</div>
+<!-- List of Accommodation Bookings End -->
