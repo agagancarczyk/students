@@ -36,95 +36,95 @@
     <div class="col-lg-4"></div>
       <div class="col-lg-6">
         <form action="/inputAccommodationData/addAccommodation" method="POST">
-        <fieldset>
-          #{ifErrors}
-            #{errors}  
-              <h2 id="alert">
-              ${error}<br></h2>
-            #{/errors}
-  	      #{/ifErrors}
-          <h2><span class="text-muted">Add Accommodation(s)</span></h2>
-          <p class="lead">City</p>
-          <div class="row">
-            <div class="form-group">
-              <div class="col-lg-12">
-                <input type="text" class="form-control" name="city" placeholder="Enter City">
-              </div>
-            </div>
-          </div>
-          <br>
-          <p class="lead">Accommodation Class</p>
-          <div class="row">
-            <div class="form-group">
-              <div class="col-lg-10">
-                <input type="radio" id="optionsRadios1" class="radio-inline" name="accommodationClass" value="standard" />
-                <label for="radioDescpt" class="radio-inline">Standard</label>
-                <input type="radio" id="optionsRadios2" class="radio-inline" name="accommodationClass" value="superior"/>
-                <label for="radioDescpt" class="radio-inline">Superior</label>
-                <input type="radio" id="optionsRadios3" class="radio-inline" name="accommodationClass" value="premium" />
-                <label for="radioDescpt" class="radio-inline">Premium</label>
-              </div>
-            </div>
-          </div>
-          <br>
-          <p class="lead">Accommodation furnished/ unfurnished</p>
-          <div class="row">
-            <div class="form-group">
-              <div class="col-lg-10">
-                <input type="radio" id="optionsRadios1" class="radio-inline" name="furnishStatus" value="Furnished" />
-                <label for="radioFurnish" class="radio-inline">Furnished</label>
-                <input type="radio" id="optionsRadios2" class="radio-inline" name="furnishStatus" value="Not Furnished" />
-                <label for="radioFurnish" class="radio-inline">Not Furnished</label>
-              </div>
-            </div>
-          </div>
-          <br>
-          <div class="row">
-            <div class="form-group">
-              <div class="col-lg-4">
-                <p class="lead">Monthly Rent (&#8364)</p>
-                <input type="number" name="rent" class="form-control"value="" placeholder="Rent Amount"> 
-              </div>
-              <div class="col-lg-5">
-                <p class="lead">Accommodation Type</p>
-                <select name="accommodationType" class="form-control" placeholder="Select One">
-                  <option value="select One" selected>Select One</option>
-                  <option value="apartment/flat">Apartment|Flat</option>
-                  <option value="studio">Studio</option>
-                  <option value="house">House</option>
-                </select>  
-              </div>
-            </div>
-          </div>
-          <br>    
-          <p class="lead">Rooms</p>
-          <div class="row">
-            <div class="form-group">
-              <div class="col-lg-4">
-                <input type="text" name="nmrBathrooms" class="form-control" placeholder="Bathrooms"><br>
-              </div>
-              <div class="col-lg-4">
-                <input type="text" name="nmrCommonRooms" class="form-control" placeholder="Common rooms"><br>  
-              </div>
-              <div class="col-lg-4">
-                <input type="text" name="nmrSingleBedrooms" class="form-control" placeholder="Single bedrooms"><br>  
-              </div>
-              <div class="col-lg-4">
-                <input type="text" name="nmrDoubleBedrooms" class="form-control" placeholder="Double bedrooms"><br>  
-              </div>
-              <div class="col-lg-4">
-                <input type="text" name="nmrTwinBedrooms" class="form-control" placeholder="Twin bedrooms"><br>  
-              </div>
-              <div class="col-lg-4">
-                <input type="text" name="nmrOtherBedrooms" class="form-control" placeholder="Other bedrooms"><br>   
-              </div>
-            </div>
-          </div>  
-          <br>    
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Add Accommodation</button>
-          </div> 
-          </fieldset>
+	        <fieldset>
+	          #{ifErrors}
+	            #{errors}  
+	              <h2 id="alert">
+	              ${error}<br></h2>
+	            #{/errors}
+	  	      #{/ifErrors}
+	          <h2><span class="text-muted">Add Accommodation(s)</span></h2>
+	          <p class="lead">City</p>
+	          <div class="row">
+	            <div class="form-group">
+	              <div class="col-lg-12">
+	                <input type="text" class="form-control" name="city" placeholder="Enter City">
+	              </div>
+	            </div>
+	          </div>
+	          <br>
+	          <p class="lead">Accommodation Class</p>
+	          <div class="row">
+	            <div class="form-group">
+	              <div class="col-lg-10">
+	                <input type="radio" id="optionsRadios1" class="radio-inline" name="accommodationClass" value="standard" />
+	                <label for="radioDescpt" class="radio-inline">Standard</label>
+	                <input type="radio" id="optionsRadios2" class="radio-inline" name="accommodationClass" value="superior"/>
+	                <label for="radioDescpt" class="radio-inline">Superior</label>
+	                <input type="radio" id="optionsRadios3" class="radio-inline" name="accommodationClass" value="premium" />
+	                <label for="radioDescpt" class="radio-inline">Premium</label>
+	              </div>
+	            </div>
+	          </div>
+	          <br>
+	          <p class="lead">Accommodation furnished/ unfurnished</p>
+	          <div class="row">
+	            <div class="form-group">
+	              <div class="col-lg-10">
+	                <input type="radio" id="optionsRadios1" class="radio-inline" name="furnishStatus" value="Furnished" />
+	                <label for="radioFurnish" class="radio-inline">Furnished</label>
+	                <input type="radio" id="optionsRadios2" class="radio-inline" name="furnishStatus" value="Not Furnished" />
+	                <label for="radioFurnish" class="radio-inline">Not Furnished</label>
+	              </div>
+	            </div>
+	          </div>
+	          <br>
+	          <div class="row">
+	            <div class="form-group">
+	              <div class="col-lg-4">
+	                <p class="lead">Monthly Rent (&#8364)</p>
+	                <input type="number" name="rent" class="form-control"value="" placeholder="Rent Amount"> 
+	              </div>
+	              <div class="col-lg-5">
+	                <p class="lead">Accommodation Type</p>
+	                <select name="accommodationType" class="form-control" placeholder="Select One">
+	                  <option value="select One" selected>Select One</option>
+	                  <option value="apartment/flat">Apartment|Flat</option>
+	                  <option value="studio">Studio</option>
+	                  <option value="house">House</option>
+	                </select>  
+	              </div>
+	            </div>
+	          </div>
+	          <br>    
+	          <p class="lead">Rooms</p>
+	          <div class="row">
+	            <div class="form-group">
+	              <div class="col-lg-4">
+	                <input type="text" name="nmrBathrooms" class="form-control" placeholder="Bathrooms"><br>
+	              </div>
+	              <div class="col-lg-4">
+	                <input type="text" name="nmrCommonRooms" class="form-control" placeholder="Common rooms"><br>  
+	              </div>
+	              <div class="col-lg-4">
+	                <input type="text" name="nmrSingleBedrooms" class="form-control" placeholder="Single bedrooms"><br>  
+	              </div>
+	              <div class="col-lg-4">
+	                <input type="text" name="nmrDoubleBedrooms" class="form-control" placeholder="Double bedrooms"><br>  
+	              </div>
+	              <div class="col-lg-4">
+	                <input type="text" name="nmrTwinBedrooms" class="form-control" placeholder="Twin bedrooms"><br>  
+	              </div>
+	              <div class="col-lg-4">
+	                <input type="text" name="nmrOtherBedrooms" class="form-control" placeholder="Other bedrooms"><br>   
+	              </div>
+	            </div>
+	          </div>  
+	          <br>    
+	          <div class="form-actions">
+	            <button type="submit" class="btn btn-primary">Add Accommodation</button>
+	          </div> 
+	        </fieldset>
         </form>
       </div>
       <div class="col-lg-2"></div>
@@ -173,7 +173,7 @@
             #{/list}
           </tbody>
         </table>
-        <p class="pull-right"><strong><a href="/Home/index" >Back to Home</a></strong></p>
+        <p class="pull-right"><strong><a href="/Home/index" ><span class="glyphicon glyphicon-home"></span> Back to Home</a></strong></p>
       </div>
     </div>
   </div>

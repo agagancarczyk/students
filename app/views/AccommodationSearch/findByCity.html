@@ -9,13 +9,11 @@
   <li><a href="/logout">Logout</a></li>
   <li class="divider"></li>
 #{if user instanceof models.Student}
-  <li class="nav-header"><strong>Search Options</strong></li>
   <li><a href="/courseSearch">Course</a></li>
   <li><a href="/accommodationSearch">Accommodation</a></li>
   <li class="active"><a href="/internshipSearch">Internship</a></li>
 #{/if}
 #{if user instanceof models.Agency}  
-  <li class="nav-header"><strong>Options</strong></li>
   <li class="active"><a href="/accommodationSearch">Accommodation Search</a></li>
   <li><a href="/addRemoveAccommodation">Add/Remove Accommodation</a></li>
   <li><a href="/accommodationViewings">Accommodation Viewings</a></li>
@@ -69,7 +67,7 @@
             #{/list}
           </tbody>
         </table>
-        <p class="pull-right"><strong><a href="/AccommodationSearch/index" >Back to Searches</a></strong></p>
+        <p class="pull-right"><strong><a href="/AccommodationSearch/index" ><span class="glyphicon glyphicon-search"></span> Back to Searches</a></strong></p>
       </div>
     </div>
     <div class="col-lg-1"></div>

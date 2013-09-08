@@ -35,52 +35,52 @@
     <div class="col-lg-4"></div>
       <div class="col-lg-6">
         <form class="form-horizontal" action="inputCourseData/addCourse" method="POST"> 
-        <fieldset>
-          #{ifErrors}
-            #{errors}  
-              <h2 id="alert">
-              ${error}<br></h2>
-            #{/errors}
-  	      #{/ifErrors}
-          <h2><span class="text-muted">Add Course(s)</span></h2>
-          <p class="lead">Course Title</p>
-          <div class="form-group">
-            <div class="col-lg-10">
-              <input type="text" class="form-control" name="courseTitle" placeholder="Enter Course Title">
-            </div>
-          </div><br>
-          <p class="lead">School</p>
-          <div class="form-group">
-            <div class="col-lg-10">
-              <select type="text" class="form-control" name="schoolName">
-				  <option title="Select school" value="" selected="">Select School</option>
-				  <option title="business" value="Business">Business</option>
-				  <option title="engineering" value="Engineering">Engineering</option>
-				  <option title="education" value="Education">Education</option>
-				  <option title="health sciences" value="Health Sciences">Health Sciences</option>
-				  <option title="humanities" value="Humanities">Humanities</option>
-				  <option title="science" value="Science">Science</option>
-				</select>
-            </div>
-          </div><br>
-          <div class="form-group">
-            <div class="col-lg-4">
-              <p class="lead">Level</p>
-              <select name="level" class="form-control" placeholder="Select Level">
-               <option title="6" value="6">6</option>
-				<option title="7" value="7">7</option>
-				<option title="8" value="8">8</option>
-              </select>
-            </div>
-            <div class="col-lg-2">
-              <p class="lead">Points</p>
-              <input type="text" name="points" class="form-control"value="" placeholder="Points"> 
-            </div>
-          </div>
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Add Course</button>
-          </div> 
-          </fieldset>
+	        <fieldset>
+	          #{ifErrors}
+	            #{errors}  
+	              <h2 id="alert">
+	              ${error}<br></h2>
+	            #{/errors}
+	  	      #{/ifErrors}
+	          <h2><span class="text-muted">Add Course(s)</span></h2>
+	          <p class="lead">Course Title</p>
+	          <div class="form-group">
+	            <div class="col-lg-10">
+	              <input type="text" class="form-control" name="courseTitle" placeholder="Enter Course Title">
+	            </div>
+	          </div><br>
+	          <p class="lead">School</p>
+	          <div class="form-group">
+	            <div class="col-lg-10">
+	              <select type="text" class="form-control" name="schoolName">
+								  <option title="Select school" value="" selected="">Select School</option>
+								  <option title="business" value="Business">Business</option>
+								  <option title="engineering" value="Engineering">Engineering</option>
+								  <option title="education" value="Education">Education</option>
+								  <option title="health sciences" value="Health Sciences">Health Sciences</option>
+								  <option title="humanities" value="Humanities">Humanities</option>
+								  <option title="science" value="Science">Science</option>
+					      </select>
+	            </div>
+	          </div><br>
+	          <div class="form-group">
+	            <div class="col-lg-4">
+	              <p class="lead">Level</p>
+	              <select name="level" class="form-control" placeholder="Select Level">
+	                <option title="6" value="6">6</option>
+					        <option title="7" value="7">7</option>
+					        <option title="8" value="8">8</option>
+	              </select>
+	            </div>
+	            <div class="col-lg-2">
+	              <p class="lead">Points</p>
+	              <input type="text" name="points" class="form-control"value="" placeholder="Points"> 
+	            </div>
+	          </div>
+	          <div class="form-actions">
+	            <button type="submit" class="btn btn-primary">Add Course</button>
+	          </div> 
+	        </fieldset>
         </form>
       </div>
       <div class="col-lg-2"></div>
@@ -119,7 +119,7 @@
             #{/list}
           </tbody>
         </table>
-        <p class="pull-right"><strong><a href="/Home/index" >Back to Home</a></strong></p>
+        <p class="pull-right"><strong><a href="/Home/index" ><span class="glyphicon glyphicon-home"></span> Back to Home</a></strong></p>
       </div>
     </div>
     <div class="col-lg-1"></div>

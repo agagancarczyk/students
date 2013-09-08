@@ -39,7 +39,6 @@
                   <td>${applicant.email}</td>
                   <td>${internship.jobTitle}</td>
                   <td>${internship.careerSector}</td>
-                  <td><a href="#" title="Accept Applicant"><button type="button" class="btn btn-success">Accept</button></a></td>
                   <td><a href="@{InternshipApplicants.rejectFromInternship(internship.id, applicant.id)}" title="Reject Applicant"><button type="button" class="btn btn-danger">Reject</button></a></td>
                 </tr>
               #{/list}

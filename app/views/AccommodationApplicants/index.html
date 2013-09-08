@@ -43,14 +43,13 @@
                   <td>${accommodation.city}</td>
                   <td>${accommodation.furnishStatus}</td>
                   <td>${accommodation.rent}</td>
-                  <td><a href="#" title="Accept Booking"><button type="button" class="btn btn-success">Accept</button></a></td>
                   <td><a href="@{AccommodationApplicants.rejectFromViewing(accommodation.id, applicant.id)}" title="Reject Booking"><button type="button" class="btn btn-danger">Reject</button></a></td>
                 </tr>
               #{/list}
             #{/list}
           </tbody>
         </table>
-        <p class="pull-right"><strong><a href="/Home/index" >Back to Home</a></strong></p>
+        <p class="pull-right"><strong><a href="/Home/index" ><span class="glyphicon glyphicon-home"></span> Back to Home</a></strong></p>
       </div>
     </div>
     <div class="col-lg-1"></div>

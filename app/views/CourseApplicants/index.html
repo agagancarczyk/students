@@ -40,7 +40,6 @@
                   <td>${applicant.email}</td>
                   <td>${course.courseTitle}</td>
                   <td>${course.schoolName}</td>
-                  <td><a href="#" title="Accept Applicant"><button type="button" class="btn btn-success">Accept</button></a></td>
                   <td><a href="@{CourseApplicants.rejectFromCourse(course.id, applicant.id)}" title="Reject Applicant"><button type="button" class="btn btn-danger">Reject</button></a></td>
                 </tr>
               #{/list}

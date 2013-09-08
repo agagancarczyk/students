@@ -3,93 +3,93 @@
 # ~~~~
 
 # Import CRUD routes
-*      /admin              									module:crud
+*      /admin              									            module:crud
 
 # Landing page
-GET     /                                       			Accounts.index
+GET    /                                                Accounts.index
 
 # Home
-GET		/home												Home.index
-GET 	/terms												Home.terms
+GET		 /home												                    Home.index
+GET 	 /terms												                    Home.terms
 
 # Accounts
-GET		/signup												Accounts.signup
-GET		/login												Accounts.login
-GET		/logout												Accounts.logout
-POST	/registerStudent									Accounts.registerStudent
-POST	/registerCollege									Accounts.registerCollege
-POST	/registerAgency										Accounts.registerAgency
-POST	/registerEmployer									Accounts.registerEmployer
-POST	/authenticate										Accounts.authenticate
-GET	    /authenticate										Accounts.authenticate
+GET		 /signup										                      Accounts.signup
+GET		 /login												                    Accounts.login
+GET		 /logout												                  Accounts.logout
+POST	 /registerStudent									                Accounts.registerStudent
+POST	 /registerCollege									                Accounts.registerCollege
+POST	 /registerAgency										              Accounts.registerAgency
+POST	 /registerEmployer									              Accounts.registerEmployer
+POST	 /authenticate										                Accounts.authenticate
+GET	   /authenticate										                Accounts.authenticate
 
 # ForgotPassword
-GET		/forgotpassword										ForgotPassword.index
-POST	/forgotpassword/getquestion/{email}					ForgotPassword.getQuestion
-POST	/forgotpassword/checkanswer/{answer}				ForgotPassword.checkAnswer
-POST	/forgotpassword/changepassword/{password}			ForgotPassword.changePassword	
+GET		 /forgotpassword										              ForgotPassword.index
+POST	 /forgotpassword/getquestion/{email}	            ForgotPassword.getQuestion
+POST	 /forgotpassword/checkanswer/{answer}	            ForgotPassword.checkAnswer
+POST	 /forgotpassword/changepassword/{password}	      ForgotPassword.changePassword	
 
 # Applications Status
-GET 	/applicationsStatus									ApplicationsStatus.index
+GET 	 /applicationsStatus									            ApplicationsStatus.index
 
 # Accommodation Search
-GET     /accommodationSearch								AccommodationSearch.index
-POST    /accommodationSearch/findByCity					    AccommodationSearch.findByCity	
-POST	/accommodationSearch/findByAccommodationClass		AccommodationSearch.findByAccommodationClass
-POST	/accommodationSearch/findByRent						AccommodationSearch.findByRent	
-POST	/accommodationSearch/findByAccommodationType		AccommodationSearch.findByAccommodationType
+GET    /accommodationSearch								              AccommodationSearch.index
+POST   /accommodationSearch/findByCity		              AccommodationSearch.findByCity	
+POST	 /accommodationSearch/findByAccommodationClass		AccommodationSearch.findByAccommodationClass
+POST	 /accommodationSearch/findByRent						      AccommodationSearch.findByRent	
+POST	 /accommodationSearch/findByAccommodationType		  AccommodationSearch.findByAccommodationType
 
 # Course Search	
-GET 	/courseSearch										CourseSearch.index
-POST 	/courseSearch/findByCourseTitle						CourseSearch.findByCourseTitle	
-POST    /courseSearch/findByCollege							CourseSearch.findByCollege
-POST 	/courseSearch/findBySchool							CourseSearch.findBySchool
-POST 	/courseSearch/findByLevel							CourseSearch.findByLevel
-POST 	/courseSearch/findByPoints							CourseSearch.findByPoints
+GET 	 /courseSearch										                CourseSearch.index
+POST 	 /courseSearch/findByCourseTitle						      CourseSearch.findByCourseTitle	
+POST   /courseSearch/findByCollege							        CourseSearch.findByCollege
+POST 	 /courseSearch/findBySchool							          CourseSearch.findBySchool
+POST 	 /courseSearch/findByLevel							          CourseSearch.findByLevel
+POST 	 /courseSearch/findByPoints							          CourseSearch.findByPoints
 
 # Internship Search	
-GET 	/internshipSearch									InternshipSearch.index		
-POST 	/internshipSearch/findByJobTitle					InternshipSearch.findByJobTitle
-POST 	/internshipSearch/findByCareerSector				InternshipSearch.findByCareerSector	
+GET 	 /internshipSearch									              InternshipSearch.index		
+POST 	 /internshipSearch/findByJobTitle					        InternshipSearch.findByJobTitle
+POST 	 /internshipSearch/findByCareerSector				      InternshipSearch.findByCareerSector	
 
 # InputAccommodationData
-GET 	/addRemoveAccommodation								InputAccommodationData.index
-POST    /inputAccommodationData/addAccommodation  			InputAccommodationData.addAccommodation
-GET		/inputAccommodationData/removeAccommodation/{id} 	InputAccommodationData.removeAccommodation
+GET 	 /addRemoveAccommodation								          InputAccommodationData.index
+POST   /inputAccommodationData/addAccommodation  			  InputAccommodationData.addAccommodation
+GET		 /inputAccommodationData/removeAccommodation/{id} InputAccommodationData.removeAccommodation
 
 # InputCourseData
-GET    /addRemoveCourse										InputCourseData.index
-POST   /inputCourseData/addCourse							InputCourseData.addCourse
-GET	   /inputCourseData/removeCourse/{id}					InputCourseData.removeCourse
+GET    /addRemoveCourse										              InputCourseData.index
+POST   /inputCourseData/addCourse							          InputCourseData.addCourse
+GET	   /inputCourseData/removeCourse/{id}					      InputCourseData.removeCourse
 
 # InputInternshipData
-GET    /addRemoveInternship									InputInternshipData.index
-POST   /inputInternshipData/addInternship					InputInternshipData.addInternship
+GET    /addRemoveInternship									            InputInternshipData.index
+POST   /inputInternshipData/addInternship					      InputInternshipData.addInternship
 GET    /inputInternshipData/removeInternship/{id} 			InputInternshipData.removeInternship
 
 # Applicants
-GET    /courseApplicants									CourseApplicants.index
-GET    /accommodationViewings								AccommodationApplicants.index
-GET    /internshipApplicants								InternshipApplicants.index
+GET    /courseApplicants									              CourseApplicants.index
+GET    /accommodationViewings								            AccommodationApplicants.index
+GET    /internshipApplicants								            InternshipApplicants.index
 
 # About
-GET     /about												About.index
+GET    /about												                    About.index
 
 # Contact
-GET		/contact											Contact.index
-GET     /contact/captcha                               		Contact.captcha
+GET		 /contact											                    Contact.index
+GET    /contact/captcha                               	Contact.captcha
 
 # Aims
-GET 	/aims												Aims.index
-GET     /donation		                               		Aims.donation
-GET     /donate		                                 		Aims.donate
-POST    /donate		                                 		Aims.donate
+GET 	 /aims												                    Aims.index
+GET    /donation		                               		  Aims.donation
+GET    /donate		                                 		  Aims.donate
+POST   /donate		                                 		  Aims.donate
 
 # Ignore favicon requests
-GET     /favicon.ico                            			404
+GET    /favicon.ico                            			    404
 
 # Map static resources from the /app/public folder to the /public path
-GET     /public/                                			staticDir:public
+GET    /public/                                			staticDir:public
 
 # Catch all
 *       /{controller}/{action}                  			{controller}.{action}
