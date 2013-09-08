@@ -2,13 +2,18 @@ package models;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.Table;
+
 import java.util.List;
 import java.util.ArrayList;
+
 import javax.persistence.OneToMany;
+
 import play.Logger;
 import play.db.jpa.Model;
 
 @Entity
+@Table(name="my_user")
 public abstract class User extends Model
 {
 
