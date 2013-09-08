@@ -9,13 +9,11 @@
   <li><a href="/logout">Logout</a></li>
   <li class="divider"></li>
 #{if user instanceof models.Student}
-  <li class="nav-header"><strong>Search Options</strong></li>
   <li><a href="/courseSearch">Course</a></li>
-  <li><a href="/accommodationSearch">Accommodation</a></li>
-  <li class="active"><a href="/internshipSearch">Internship</a></li>
+  <li class="active"><a href="/accommodationSearch">Accommodation</a></li>
+  <li><a href="/internshipSearch">Internship</a></li>
 #{/if}
 #{if user instanceof models.Agency}  
-  <li class="nav-header"><strong>Options</strong></li>
   <li class="active"><a href="/accommodationSearch">Accommodation Search</a></li>
   <li><a href="/addRemoveAccommodation">Add/Remove Accommodation</a></li>
   <li><a href="/accommodationViewings">Accommodation Viewings</a></li>
@@ -50,20 +48,22 @@
 <!-- Search by City Begin -->
 <div class="container">
   <div class="row">
-    <form class="form-inline" action="accommodationSearch/findByCity" method="POST">
+    <form class="form-horizontal" action="accommodationSearch/findByCity" method="POST">
+    <fieldset>
       <div class="form-group">
         <div class="col-lg-3"></div>
         <div class="col-lg-2">
           <h2><small>By City: </small></h2>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-2">
           <label class="searchByCity" for="searchByCity"></label>
           <input type="text" class="form-control" name="city" placeholder="Enter City">
-        </div>
-      </div><br>
+        </div><br>
       <div class="form-actions">
         <button type="submit" class="btn btn-primary">Search</button>
       </div>
+      </div>
+      </fieldset>
     </form>
   </div>
 </div>
@@ -71,7 +71,8 @@
 <!-- Search by Accommodation Category Begin -->
 <div class="container">
   <div class="row">
-    <form class="form-inline" action="accommodationSearch/findByAccommodationClass" method="POST">
+    <form class="form-horizontal" action="accommodationSearch/findByAccommodationClass" method="POST">
+    <fieldset>
       <div class="form-group">
         <div class="col-lg-3"></div>
         <div class="col-lg-2">
@@ -89,6 +90,7 @@
           <button type="submit" class="btn btn-primary">Search</button>
         </div>
       </div>
+      </fieldset>
     </form>
   </div>
 </div>
@@ -96,7 +98,8 @@
 <!-- Search by Rent Begin -->
 <div class="container">
   <div class="row">
-    <form class="form-inline" action="accommodationSearch/findByRent" method="POST">
+    <form class="form-horizontal" action="accommodationSearch/findByRent" method="POST">
+    <fieldset>
       <div class="form-group">
         <div class="col-lg-3"></div>
         <div class="col-lg-2">
@@ -109,6 +112,7 @@
           <button type="submit" class="btn btn-primary">Search</button>
         </div>
       </div>
+      </fieldset>
     </form>
   </div>
 </div>
@@ -116,7 +120,8 @@
 <!-- Search by Accommodation Type Begin -->
 <div class="container">
   <div class="row">
-    <form class="form-inline" action="accommodationSearch/findByAccommodationType" method="POST">
+    <form class="form-horizontal" action="accommodationSearch/findByAccommodationType" method="POST">
+    <fieldset>
       <div class="form-group">
         <div class="col-lg-3"></div>
         <div class="col-lg-2">
@@ -134,6 +139,7 @@
           <button type="submit" class="btn btn-primary">Search</button>
         </div>
       </div>
+      </fieldset>
     </form>
   </div>
 </div>

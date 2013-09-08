@@ -8,7 +8,6 @@
   <li><a href="/aims">Aim(s)</a></li> 
   <li><a href="/logout">Logout</a></li>
   <li class="divider"></li>
-  <li class="nav-header"><strong>Options</strong></li>
   <li><a href="/courseSearch">Course Search</a></li>
   <li class="active"><a href="/addRemoveCourse">Add/Remove Course</a></li>
   <li><a href="/courseApplicants">Course Applicants</a></li>
@@ -36,6 +35,7 @@
     <div class="col-lg-4"></div>
       <div class="col-lg-6">
         <form class="form-horizontal" action="inputCourseData/addCourse" method="POST"> 
+        <fieldset>
           #{ifErrors}
             #{errors}  
               <h2 id="alert">
@@ -80,6 +80,7 @@
           <div class="form-actions">
             <button type="submit" class="btn btn-primary">Add Course</button>
           </div> 
+          </fieldset>
         </form>
       </div>
       <div class="col-lg-2"></div>

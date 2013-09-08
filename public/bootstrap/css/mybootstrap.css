@@ -3,19 +3,10 @@
 /*Additional bootstrap styling.
  */
  
-h1, h2, p, legend, select
-{
-	color: #6699FF;
-}
-
-h4, address 
-{
-	color: #CCCCFF;
-}
 
 #alert 
 {
-	color: #E60000;
+	color: 	#990000;
 }
 
 #error 
@@ -52,7 +43,13 @@ label
 }
 
 table 
-{
-	
+{	
 	background-color: white;
 }
+
+.featurette-image,
+.img-circle 
+{
+	border: 2px solid #1F7A7A;
+}
+

@@ -9,13 +9,11 @@
   <li><a href="/logout">Logout</a></li>
   <li class="divider"></li>
 #{if user instanceof models.Student}
-  <li class="nav-header"><strong>Search Options</strong></li>
   <li><a href="/courseSearch">Course</a></li>
   <li><a href="/accommodationSearch">Accommodation</a></li>
   <li class="active"><a href="/internshipSearch">Internship</a></li>
 #{/if}
 #{if user instanceof models.Employer}
-  <li class="nav-header"><strong>Options</strong></li>
   <li class="active"><a href="/internshipSearch">Internship Search</a></li>
   <li><a href="/addRemoveInternship">Add/Remove Internship</a></li>
   <li><a href="/internshipApplicants">Internship Applicants</a></li>
@@ -50,7 +48,8 @@
 <!-- Search by Job Title Begin -->
 <div class="container">
   <div class="row">
-    <form class="form-inline" action="internshipSearch/findByJobTitle" method="POST">
+    <form class="form-horizontal" action="internshipSearch/findByJobTitle" method="POST">
+    <fieldset>
       <div class="form-group">
         <div class="col-lg-3"></div>
         <div class="col-lg-2">
@@ -59,11 +58,12 @@
         <div class="col-lg-4">
           <label class="searchByJobTitle" for="searchByJobTitle"></label>
           <input type="text" class="form-control" name="jobTitle" placeholder="Enter Job Title">
-        </div>
       </div><br>
       <div class="form-actions">
       <button type="submit" class="btn btn-primary">Search</button>
+        </div>
       </div>
+      </fieldset>
     </form>
   </div>
 </div>
@@ -71,7 +71,8 @@
 <!-- Search by Career Sector Begin -->
 <div class="container">
   <div class="row">
-    <form class="form-inline" action="internshipSearch/findByCareerSector" method="POST">
+    <form class="form-horizontal" action="internshipSearch/findByCareerSector" method="POST">
+    <fieldset>
       <div class="form-group">
         <div class="col-lg-3"></div>
         <div class="col-lg-2">
@@ -111,11 +112,12 @@
 			<option title="Social, community and youth" value="Social, community and youth">Social, community and youth</option>
 			<option title="Teaching and education" value="Teaching and education">Teaching and education</option>
 		  </select>
-        </div>
       </div><br>
       <div class="form-actions">
       <button type="submit" class="btn btn-primary">Search</button>
+        </div>
       </div>
+      </fieldset>
     </form>
   </div>
 </div>

@@ -14,7 +14,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-10">
+    <div class="col-lg-12">
       <h2>Hello, ${user.firstName} ${user.lastName} (${user.email})!</h2>
 	    <p><span class="text-muted">We are very happy that you are using our Service and we have some extra feature proposals for you to improve your experience with us.
 	    <br>Please feel free to donate.</span></p><br>
@@ -37,9 +37,11 @@
 	                need to contact Students to inform them about <br>their applications status. 
 	            </td>
 	            <td><form action="/donate" method="POST">
+	            <fieldset>
 	              <div class="form-group">
-	                <div class="col-xs-2 col-md-2">
+	                <div class="col-lg-12">
 	                  <div class="controls">
+	                  <div class="row">
 	                    <select class="form-control" name="amountDonated">
 	                      <option value="10">&#8364 10</option>
 	                      <option value="20">&#8364 20</option>
@@ -53,10 +55,12 @@
 	                    <label id="donation" class="radio-inline">  
 	                      <input type="radio" name="methodDonated" value="direct" checked="checked"><strong>Direct</strong>
 	                    </label>
+	                    </div>
 		              </div>
 		            </div><br>
 		            <button type="submit" class="btn btn-primary">Donate</button>
 	              </div>
+	              </fieldset>
 	            </form>
 	            <p>Amount target achieved:</p>
 	              <div class="progress progress-striped active">
@@ -82,7 +86,7 @@
 	<!-- footer -->
     <footer>   
       <div id="social">
-        <div class="col-md-3 col-md-offset-3 social">
+        <div class="col-md-6 col-md-offset-3 social">
           <!-- AddThis Button Start -->
           <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
             <a class="addthis_button_preferred_1"></a>
@@ -94,7 +98,7 @@
           <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51e5f5d9549fdf9b"></script>
           <!-- AddThis Button End -->
         </div>
-      </div><br>
+      </div><br><br>
       <div id="copyright">
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>&copy; 2013 studEnts, Inc. &middot; <a href="/terms">Privacy & Terms of Service</a></p>

@@ -38,91 +38,91 @@
       <div class="col-lg-4">
         <img class="img-circle" src="/public/assets/images/courses.jpg">
         <h1>Course</h1>
-        <p>Are you looking for a course? This search facility will assist you 
+        <p class="text-muted">Are you looking for a course? This search facility will assist you 
            to find the right course for you based on course title, college, department and more.</p>
-        <p><a class="btn btn-default" href="/courseSearch">Search Now! &raquo;</a></p>
+        <p><a class="btn btn-primary" href="/courseSearch">Search Now! &raquo;</a></p>
       </div>
       <div class="col-lg-4">
         <img class="img-circle" src="/public/assets/images/rent.jpg">
         <h1>Accommodation</h1>
-        <p>Are you looking for a student accomodation? We offer an excellent search facility to help you 
+        <p class="text-muted">Are you looking for a student accomodation? We offer an excellent search facility to help you 
         find all available places in your location and book a viewing.</p>
-        <p><a class="btn btn-default" href="/accommodationSearch">Search Now! &raquo;</a></p>
+        <p><a class="btn btn-primary" href="/accommodationSearch">Search Now! &raquo;</a></p>
       </div>
       <div class="col-lg-4">
         <img class="img-circle" src="/public/assets/images/internship.jpg">
         <h1>Internship</h1>
-        <p>Are you interested in developing knowledge and experience in one of the best and most prestige companies? 
+        <p class="text-muted">Are you interested in developing knowledge and experience in one of the best and most prestige companies? 
            You can search and apply for an internship with us.
         </p>
-        <p><a class="btn btn-default" href="/internshipSearch">Search Now! &raquo;</a></p>
+        <p><a class="btn btn-primary" href="/internshipSearch">Search Now! &raquo;</a></p>
       </div>
     #{/if}
     #{if user instanceof models.College}
       <div class="col-lg-4">
         <img class="img-circle" src="/public/assets/images/search.jpg">
         <h1>Course Search</h1>
-        <p>This search tool will help to make sure that particular course is in the list of courses 
+        <p class="text-muted">This search tool will help to make sure that particular course is in the list of courses 
         available for Students. You can also remove the course as soon as you find it.</p>
-        <p><a class="btn btn-default" href="/courseSearch">Search Now! &raquo;</a></p>
+        <p><a class="btn btn-primary" href="/courseSearch">Search Now! &raquo;</a></p>
       </div>
       <div class="col-lg-4">
         <img class="img-circle" src="/public/assets/images/addremove.jpg">
         <h1>Add/Remove Course</h1>
-        <p>You can add any course run by the College you are representing or remove any course which is no longer available
+        <p class="text-muted">You can add any course run by the College you are representing or remove any course which is no longer available
         for Students.</p>
-        <p><a class="btn btn-default" href="/addRemoveCourse">Go! &raquo;</a></p>
+        <p><a class="btn btn-primary" href="/addRemoveCourse">Go! &raquo;</a></p>
       </div>
       <div class="col-lg-4">
         <img class="img-circle" src="/public/assets/images/courses.jpg">
         <h1>Course Applicants</h1>
-        <p>You can check out who applied for which course run by the College. You can also accept or reject Applicants.
+        <p class="text-muted">You can check out who applied for which course run by the College. You can also accept or reject Applicants.
         </p>
-        <p><a class="btn btn-default" href="/courseApplicants">Go! &raquo;</a></p>
+        <p><a class="btn btn-primary" href="/courseApplicants">Go! &raquo;</a></p>
       </div>
     #{/if}
     #{if user instanceof models.Agency}
       <div class="col-lg-4">
         <img class="img-circle" src="/public/assets/images/search.jpg">
         <h1>Accommodation Search</h1>
-        <p>This search tool will help you to make sure that your accommodations exist in our searching database and remove
+        <p class="text-muted">This search tool will help you to make sure that your accommodations exist in our searching database and remove
         it if necessary.</p>
-        <p><a class="btn btn-default" href="/accommodationSearch">Search Now! &raquo;</a></p>
+        <p><a class="btn btn-primary" href="/accommodationSearch">Search Now! &raquo;</a></p>
       </div>
       <div class="col-lg-4">
         <img class="img-circle" src="/public/assets/images/addremove.jpg">
         <h1>Add/Remove Accommodation</h1>
-        <p>You can add or remove any accommodation from our search database to keep it up to date for Students.</p>
-        <p><a class="btn btn-default" href="/addRemoveAccommodation">Go! &raquo;</a></p>
+        <p class="text-muted">You can add or remove any accommodation from our search database to keep it up to date for Students.</p>
+        <p><a class="btn btn-primary" href="/addRemoveAccommodation">Go! &raquo;</a></p>
       </div>
       <div class="col-lg-4">
         <img class="img-circle" src="/public/assets/images/rent.jpg">
         <h1>Accommodation Viewing Bookings</h1>
-        <p>You can check out bookings made by Students in order to contact them directly to confirm viewing.
+        <p class="text-muted">You can check out bookings made by Students in order to contact them directly to confirm viewing.
         </p>
-        <p><a class="btn btn-default" href="/accommodationViewings">Go! &raquo;</a></p>
+        <p><a class="btn btn-primary" href="/accommodationViewings">Go! &raquo;</a></p>
       </div>
     #{/if}
     #{if user instanceof models.Employer}
       <div class="col-lg-4">
         <img class="img-circle" src="/public/assets/images/search.jpg">
         <h1>Internship Search</h1>
-        <p>This search facility will help you to make sure that internships you have added exist in the Student's 
+        <p class="text-muted">This search facility will help you to make sure that internships you have added exist in the Student's 
         searching database so that they can apply for it online.</p>
-        <p><a class="btn btn-default" href="/internshipSearch">Search Now! &raquo;</a></p>
+        <p><a class="btn btn-primary" href="/internshipSearch">Search Now! &raquo;</a></p>
       </div>
       <div class="col-lg-4">
         <img class="img-circle" src="/public/assets/images/addremove.jpg">
         <h1>Add/Remove Internship</h1>
-        <p>You can add or remove any internship from our search database to keep it up to date for Students.</p>
-        <p><a class="btn btn-default" href="/addRemoveInternship">Go! &raquo;</a></p>
+        <p class="text-muted">You can add or remove any internship from our search database to keep it up to date for Students.</p>
+        <p><a class="btn btn-primary" href="/addRemoveInternship">Go! &raquo;</a></p>
       </div>
       <div class="col-lg-4">
         <img class="img-circle" src="/public/assets/images/internship.jpg">
         <h1>Internship Applications</h1>
-        <p>You can check out applications made by Students in order to contact them directly to confirm interview.
+        <p class="text-muted">You can check out applications made by Students in order to contact them directly to confirm interview.
         </p>
-        <p><a class="btn btn-default" href="/internshipApplicants">Go! &raquo;</a></p>
+        <p><a class="btn btn-primary" href="/internshipApplicants">Go! &raquo;</a></p>
       </div>
     #{/if}
   </div>
@@ -213,7 +213,7 @@
   #{/if}
   <footer>
    <div id="social">
-      <div class="col-md-3 col-md-offset-3 social">
+      <div class="col-md-6 col-md-offset-3 social">
         <!-- AddThis Button Start -->
         <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
           <a class="addthis_button_preferred_1"></a>
@@ -225,7 +225,7 @@
         <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51e5f5d9549fdf9b"></script>
         <!-- AddThis Button End -->
       </div>
-    </div><br>
+    </div><br><br>
     <div id="copyright">
       <p class="pull-right"><a href="#">Back to top</a></p>
       <p>&copy; 2013 studEnts, Inc. &middot; <a href="/terms">Privacy & Terms of Service</a></p>

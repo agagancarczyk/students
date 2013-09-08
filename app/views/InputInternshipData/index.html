@@ -8,7 +8,6 @@
   <li><a href="/aims">Aim(s)</a></li> 
   <li><a href="/logout">Logout</a></li>
   <li class="divider"></li>
-  <li class="nav-header"><strong>Options</strong></li>
   <li><a href="/internshipSearch">Internship Search</a></li>
   <li class="active"><a href="/addRemoveInternship">Add/Remove Internship</a></li>
   <li><a href="/internshipApplicants">Internship Applicants</a></li>
@@ -35,7 +34,8 @@
   <div class="row">
     <div class="col-lg-4"></div>
       <div class="col-lg-6">
-        <form class="form-horizontal" action="inputInternshipData/addInternship" method="POST">   
+        <form class="form-horizontal" action="inputInternshipData/addInternship" method="POST"> 
+        <fieldset>  
           #{ifErrors}
             #{errors}  
               <h2 id="alert">
@@ -91,6 +91,7 @@
            <div class="form-actions">
           <button type="submit" class="btn btn-primary">Add Internship</button>
         </div> 
+        </fieldset>
       </form>
     </div>
     <div class="col-lg-2"></div>

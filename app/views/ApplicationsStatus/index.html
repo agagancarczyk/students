@@ -8,7 +8,6 @@
   <li><a href="/aims">Aim(s)</a></li> 
   <li><a href="/logout">Logout</a></li>
   <li class="divider"></li>
-  <li class="nav-header"><strong>Search Options</strong></li>
   <li><a href="/courseSearch">Course</a></li>
   <li><a href="/accommodationSearch">Accommodation</a></li>
   <li><a href="/internshipSearch">Internship</a></li>
@@ -30,6 +29,7 @@
               <td><strong>College Location</strong></td>
               <td><strong>Course Title</strong></td>
               <td><strong>Added by College</strong></td>
+              <td><strong>Status</strong></td>
             </tr>
           </thead>
           <tbody>
@@ -39,7 +39,7 @@
                   <td>${course.college.collegeAddress}</td>
                   <td>${course.courseTitle}</td>
                   <td>${course.date}</td>
-                  <td><p><strong>Processing!</strong></p></td>
+                  <td><p id="success"><strong>Processing!</strong></p></td>
                 </tr>
               #{/list}
           </tbody>
@@ -69,6 +69,7 @@
               <td><strong>Twin bedrooms</strong></td>
               <td><strong>Other bedrooms</strong></td>
               <td><strong>Added by Agency</strong></td>
+              <td><strong>Status</strong></td>
             </tr>
           </thead>
           <tbody>
@@ -84,7 +85,7 @@
                 <td>${booking.nmrTwinBedrooms}</td>
                 <td>${booking.nmrOtherBedrooms}</td>
                 <td>${booking.date}</td>
-                <td><p><strong>Processing!</strong></p></td>
+                <td><p id="success"><strong>Processing!</strong></p></td>
               </tr>
             #{/list}
           </tbody>
@@ -108,6 +109,7 @@
               <td><strong>Employer Location</strong></td>
               <td><strong>Job Title</strong></td>
               <td><strong>Added by Employer</strong></td>
+              <td><strong>Status</strong></td>
             </tr>
           </thead>
           <tbody>
@@ -117,7 +119,7 @@
                   <td>${internship.employer.employerAddress}</td>
                   <td>${internship.jobTitle}</td>
                   <td>${internship.date}</td>
-                  <td><p><strong>Processing!</strong></p></td>
+                  <td><p id="success"><strong>Processing!</strong></p></td>
                 </tr>
               #{/list}
           </tbody>
